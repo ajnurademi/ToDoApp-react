@@ -3,6 +3,7 @@ import './login.scss';
 import login_pic from '../../assets/img/Authentication-rafiki.png';
 
 function Login() {
+
   return (
     <div className="container">
       <section className="loginwindow">
@@ -24,7 +25,7 @@ function Login() {
             <div className="btn-login">
               <button>Login</button>
             </div>
-            <a href="" className="forgot-password">Forget Password?</a>
+            <a href="" className="forgot-password">Forget Password?</a> 
             <a href="" className="create-account">Don't have an Account?</a>
           </div>
         </div>
