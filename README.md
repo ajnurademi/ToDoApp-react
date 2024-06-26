@@ -1,6 +1,6 @@
 # 📚 Projektbeschreibung
 
-TodoApp ist eine Anwendung zur Verwaltung von Aufgaben, die mit React für das Frontend und MongoDB für das Backend entwickelt wurde. Die Anwendung bietet Funktionen zum Anmelden und Registrieren sowie zur Verwaltung von Aufgaben.
+TodoApp ist eine Anwendung zur Verwaltung von Aufgaben, die mit React für das Frontend. Die Anwendung bietet Funktionen zum Anmelden und Registrieren sowie zur Verwaltung von Aufgaben.
 
 ## ✨ Funktionen
 
@@ -13,9 +13,8 @@ TodoApp ist eine Anwendung zur Verwaltung von Aufgaben, die mit React für das F
 
 ## 💻 Technologien
 
-- **Frontend**: React, HTML, CSS
-- **Backend**: Node.js, Express.js
-- **Datenbank**: MongoDB
+- React
+
 
 ## ⚙️ Installation und Ausführung
 
@@ -34,13 +33,5 @@ TodoApp ist eine Anwendung zur Verwaltung von Aufgaben, die mit React für das F
     npm run dev
     ```
 
-3. **🔑 Umgebungsvariablen**
-
-    Erstellen Sie eine `.env`-Datei im `backend`-Verzeichnis mit folgendem Inhalt:
-
-    ```env
-    MONGO_URI=your_mongodb_connection_string
-    JWT_SECRET=your_secret_key
-    ```
 
 
