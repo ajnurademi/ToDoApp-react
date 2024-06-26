@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import TodoItem from './todoitem/todoitem.jsx'; // Adjust import path as per your project structure
+import TodoItem from './todoitem/todoitem.jsx'; 
 import './todolist.scss';
 
 function Todolist() {
@@ -25,7 +25,7 @@ function Todolist() {
                 text: text,
                 completed: false
             };
-            setTasks([...tasks, newTask]); 
+            setTasks([...tasks, newTask]);
             setText('');
         }
     };
@@ -43,6 +43,12 @@ function Todolist() {
         }));
     };
 
+    const handleKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            addTask();
+        }
+    };
+
     return (
         <div className="todo-list">
             {tasks.map(task => (
@@ -58,9 +64,10 @@ function Todolist() {
                     type="text"
                     value={text}
                     onChange={e => setText(e.target.value)}
+                    onKeyPress={handleKeyPress} 
                     placeholder="Enter a task"
                 />
-                <button onClick={addTask}>Add</button>
+                <button onClick={addTask}>Add Task</button>
             </div>
         </div>
     );
