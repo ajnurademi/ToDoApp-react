@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import './login.scss'; 
 import login_pic from '../../assets/img/Authentication-rafiki.png';
 
-function Login() {
+function Login({ onLoginSuccess }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const handleLogin = async () => {
         try {
-            const response = await fetch('/api/login', {
+            const response = await fetch('/api/auth/login', { // API endpoint aktualisiert
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -17,13 +17,17 @@ function Login() {
             });
 
             if (!response.ok) {
-                throw new Error('Failed to save user data');
+                throw new Error('Failed to log in');
             }
 
-            alert('User data saved successfully');
+            const data = await response.json();
+            alert('Login successful');
+
+            // Rufe die Erfolgsfunktion auf, um die Komponente zu wechseln
+            onLoginSuccess();
         } catch (error) {
             console.error('Error:', error.message);
-            alert('Failed to save user data');
+            alert('Failed to log in');
         }
     };
 
@@ -37,7 +41,7 @@ function Login() {
                     <div className="userinput">
                         <div className="title">
                             <p id="welcome">Welcome back! 👋</p>
-                            <p id="loginacc">Login in your account</p>
+                            <p id="loginacc">Login to your account</p>
                         </div>
                         <div className="email-password">
                             <p>Email</p>
@@ -48,7 +52,7 @@ function Login() {
                         <div className="btn-login">
                             <button onClick={handleLogin}>Login</button>
                         </div>
-                        <a href="#" className="forgot-password">Forget Password?</a> 
+                        <a href="#" className="forgot-password">Forgot Password?</a>
                         <a href="#" className="create-account">Don't have an Account?</a>
                     </div>
                 </div>
